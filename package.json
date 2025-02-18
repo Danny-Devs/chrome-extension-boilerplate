@@ -10,9 +10,12 @@
     "clean": "rm extension/content.js extension/content.js.map",
     "dev": "vite",
     "build": "vite build",
-    "watch": "vite build --watch"
+    "watch": "chokidar '**/*.{js,html,css}' --ignore 'extension/**' -c 'pnpm run build'"
   },
   "dependencies": {
-    "vite": "^6.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0",
+    "chokidar-cli": "^3.0.0"
   }
 }
